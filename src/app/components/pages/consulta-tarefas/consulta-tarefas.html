@@ -2,13 +2,15 @@
 <p>Pesquise tarefas em sua agenda por período de datas.</p>
 <hr />
 
-<form>
+<form [formGroup]="formulario" (ngSubmit)="onSubmit()">
     <div class="row mb-3">
         <div class="col-md-3">
-            <input type="date" class="form-control" id="dataInicio">
+            <input type="datetime-local" formControlName="dataHoraInicio" 
+                class="form-control" id="dataInicio">
         </div>
         <div class="col-md-3">
-            <input type="date" class="form-control" id="dataFim">
+            <input type="datetime-local" formControlName="dataHoraFim" 
+                class="form-control" id="dataFim">
         </div>
         <div class="col-md-6">
             <button type="submit" class="btn btn-primary">Pesquisar tarefas</button>
